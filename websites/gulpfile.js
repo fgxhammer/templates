@@ -4,17 +4,15 @@ let browserSync = require('browser-sync').create()
 
 gulp.task('sass', () => {
   return gulp.src('./src/sass/*.scss')
-    .pipe(sass({
-      includePaths: ['scss'],
-      onError: browserSync.notify
-    }))
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./src/css'))
     .pipe(browserSync.stream())
 })
 
 gulp.task('sync', () => {
   browserSync.init({
-    server: './'
+    server: './',
+    notify: false
   })
   gulp.watch('./src/sass/*.scss', ['sass'])
   gulp.watch('./*.html').on('change', browserSync.reload)
