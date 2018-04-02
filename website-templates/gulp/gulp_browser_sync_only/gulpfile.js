@@ -9,3 +9,5 @@ gulp.task('sync', () => {
   })
   gulp.watch(['./**']).on('change', browserSync.reload)
 })
+
+gulp.task('default', ['sync'])
