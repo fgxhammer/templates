@@ -1,0 +1,19 @@
+{
+  "name": "monitor-template",
+  "version": "1.0.0",
+  "description": "* \"npm install\" to install dependencies * \"npm run watch\" to start watchify * \"gulp serve\" to start gulp browser-sync",
+  "main": "app.js",
+  "scripts": {
+    "build": "browserify app.js -o bundle.js",
+    "watch": "watchify app.js -o bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.5.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "watchify": "^3.11.1"
+  }
+}
